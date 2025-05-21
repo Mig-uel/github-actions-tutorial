@@ -43,4 +43,4 @@ GitHub Actions is a powerful automation tool that allows you to create workflows
 
 ## Credits
 
-Video series: [Introduction to GitHub Actions](https://youtube.com/playlist?list=PLiO7XHcmTsleVSRaY7doSfZryYWMkMOxB&si=wqMOf9krw8grDRjt) by [Mickey Gousset](https://www.youtube.com/@MickeyGousset) on YouTube.
+[Introduction to GitHub Actions](https://youtube.com/playlist?list=PLiO7XHcmTsleVSRaY7doSfZryYWMkMOxB&si=wqMOf9krw8grDRjt) by [Mickey Gousset](https://www.youtube.com/@MickeyGousset) on YouTube.
