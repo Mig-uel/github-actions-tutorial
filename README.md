@@ -4,7 +4,7 @@ GitHub Actions is a powerful automation tool that allows you to create workflows
 
 ## Contents
 
-1. Basic Concepts
+1. **Basic Concepts**
 
    - **Workflow**: A workflow is an automated process that you define in your GitHub repository. It consists of one or more jobs that run in response to specific events.
    - **Job**: A job is a set of steps that execute on the same runner. Each job runs in a fresh instance of the virtual environment.
@@ -13,10 +13,10 @@ GitHub Actions is a powerful automation tool that allows you to create workflows
    - **Runner**: A runner is a server that runs your workflows when triggered. GitHub provides hosted runners, or you can host your own.
    - **Event**: An event is a specific activity that triggers a workflow. Examples include pushing code, creating a pull request, or scheduling a job.
    - **Trigger**: A trigger is an event that starts a workflow. You can define triggers in your workflow file.
-   - **Environment**: An environment is a set of resources that your workflow can access. You can define environments for different stages of your deployment process
+   - **Environment**: An environment is a set of resources that your workflow can access. You can define environments for different stages of your deployment process.
    - **Secret**: A secret is a sensitive piece of information, such as an API key or password, that you can store in your repository settings and use in your workflows without exposing it in your code.
 
-2. Chaining Jobs Together in a Workflow
+2. **Chaining Jobs Together in a Workflow**
 
    - You can chain jobs together in a workflow by using the `needs` keyword. This allows you to specify that one job depends on the successful completion of another job before it runs.
    - Example:
