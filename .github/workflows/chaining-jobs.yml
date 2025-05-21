@@ -48,7 +48,7 @@ jobs:
     name: 'Job 4'
     runs-on: ubuntu-latest
     # always run in the workflow
-    if: always()
+    # if: always()
     needs:
       - job-2
       - job-3
