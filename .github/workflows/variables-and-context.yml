@@ -21,3 +21,27 @@ jobs:
         env:
           GITHUB_CONTEXT: ${{toJson(github)}}
         run: echo "$GITHUB_CONTEXT"
+
+  job2:
+    runs-on: ubuntu-latest
+
+    outputs:
+      output1: ${{steps.step1.outputs.step1value}}
+      output2: ${{steps.step2.outputs.step2value}}
+
+    steps:
+      - name: 'Step 1'
+        id: step1
+        # run: echo ":: set-output name=step1value::hello"
+        run: echo "step1value=hello" >> $GITHUB_OUTPUT
+
+      - name: 'Step 2'
+        id: step2
+        # run: echo "::set-output name=step2value::world"
+        run: echo "step1value=world" >> $GITHUB_OUTPUT
+
+  job3:
+    runs-on: ubuntu-latest
+    needs: job2
+    steps:
+      - run: echo ${{needs.job2.outputs.output1}} ${{needs.job2.outputs.output2}}
