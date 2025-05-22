@@ -42,6 +42,60 @@ GitHub Actions is a powerful automation tool that allows you to create workflows
             run: echo "Running tests..."
     ```
 
+3. **The GitHub Context Object and Variables**
+
+- Every time you execute a workflow, GitHub provides a context object that contains information about the workflow run and the environment in which it is running.
+- The GitHub context object provides information about the workflow run, including the event that triggered it, the repository, and the actor who triggered it.
+- You can access context variables using `${{ github.<context_variable> }}` syntax.
+- Example:
+
+  ```yaml
+  jobs:
+    build:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Print GitHub context
+          run: echo "Event: ${{ github.event_name }}"
+  ```
+
+- You can use this information in your workflow if you need to make decisions based on the context of the workflow run.
+- You can also define your own variables using the `env` keyword. These variables can be accessed in your steps using `${{ env.<variable_name> }}` syntax.
+
+  - Example:
+
+    ```yaml
+    jobs:
+      build:
+        runs-on: ubuntu-latest
+        env:
+          MY_VARIABLE: "Hello, World!"
+        steps:
+          - name: Print variable
+            run: echo "Variable: ${{ env.MY_VARIABLE }}"
+    ```
+
+- You can define environment variables at the job level, step level, or workflow level. The scope of the variable depends on where you define it.
+- You can also output variables from one job to another using the `outputs` keyword. This allows you to pass data between jobs in a workflow.
+
+  - Example:
+
+    ```yaml
+    jobs:
+      build:
+        runs-on: ubuntu-latest
+        steps:
+          - name: Set output variable
+            id: set_output
+            run: echo "::set-output name=my_output::Hello, World!"
+
+      test:
+        runs-on: ubuntu-latest
+        needs: build
+        steps:
+          - name: Use output variable
+            run: echo "Output: ${{ needs.build.outputs.my_output }}"
+    ```
+
 ## Credits
 
 [Introduction to GitHub Actions](https://youtube.com/playlist?list=PLiO7XHcmTsleVSRaY7doSfZryYWMkMOxB&si=wqMOf9krw8grDRjt) by [Mickey Gousset](https://www.youtube.com/@MickeyGousset) on YouTube.
