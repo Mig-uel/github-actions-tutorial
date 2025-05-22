@@ -12,9 +12,9 @@ on:
 
 # define env variables at the workflow level available to every job
 env:
-  VAR1: myworkflowvar1
-  VAR2: myworkflowvar2
-  VAR3: myworkflowvar3
+  VAR1: WORKFLOW_VAR1
+  VAR2: WORKFLOW_VAR2
+  VAR3: WORKFLOW_VAR3
 
 jobs:
   job1:
@@ -52,5 +52,27 @@ jobs:
     steps:
       - run: echo ${{needs.job2.outputs.output1}} ${{needs.job2.outputs.output2}}
 
+  # access/set env variables
   job4:
     runs-on: ubuntu-latest
+
+    # define env variables at the job level, exists
+    # for every step of the job but only this job
+    env:
+      VAR2: JOB_VAR2
+      VAR3: JOB_VAR3
+
+    steps:
+      - run: |
+          echo $VAR1
+          echo ${{env.VAR1}}
+
+          echo ""
+
+          echo $VAR2
+
+          echo $VAR3
+
+        # can also define env variables at the step level
+        env:
+          VAR3: STEP_VAR3
