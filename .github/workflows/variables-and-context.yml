@@ -10,6 +10,12 @@ on:
         default: 'World'
         required: true
 
+# define env variables at the workflow level available to every job
+env:
+  VAR1: myworkflowvar1
+  VAR2: myworkflowvar2
+  VAR3: myworkflowvar3
+
 jobs:
   job1:
     runs-on: ubuntu-latest
@@ -45,3 +51,6 @@ jobs:
     needs: job2
     steps:
       - run: echo ${{needs.job2.outputs.output1}} ${{needs.job2.outputs.output2}}
+
+  job4:
+    runs-on: ubuntu-latest
