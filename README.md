@@ -4,7 +4,7 @@ GitHub Actions is a powerful automation tool that allows you to create workflows
 
 ## Contents
 
-1. **Basic Concepts**
+**1. GitHub Actions Basics**
 
 - **Workflow**: A workflow is an automated process that you define in your GitHub repository. It consists of one or more jobs that run in response to specific events.
 
@@ -24,7 +24,7 @@ GitHub Actions is a powerful automation tool that allows you to create workflows
 
 - **Secret**: A secret is a sensitive piece of information, such as an API key or password, that you can store in your repository settings and use in your workflows without exposing it in your code.
 
-2. **Chaining Jobs Together in a Workflow**
+**2. Chaining Jobs Together in a Workflow**
 
 - You can chain jobs together in a workflow by using the `needs` keyword. This allows you to specify that one job depends on the successful completion of another job before it runs.
 
@@ -50,7 +50,7 @@ GitHub Actions is a powerful automation tool that allows you to create workflows
             run: echo "Running tests..."
     ```
 
-3. **The GitHub Context Object and Variables**
+**3. The GitHub Context Object and Variables**
 
 - Every time you execute a workflow, GitHub provides a context object that contains information about the workflow run and the environment in which it is running.
 
