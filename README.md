@@ -7,13 +7,21 @@ GitHub Actions is a powerful automation tool that allows you to create workflows
 1. **Basic Concepts**
 
 - **Workflow**: A workflow is an automated process that you define in your GitHub repository. It consists of one or more jobs that run in response to specific events.
+
 - **Job**: A job is a set of steps that execute on the same runner. Each job runs in a fresh instance of the virtual environment.
+
 - **Step**: A step is an individual task that can run commands or actions. Steps can be actions or shell commands.
+
 - **Action**: An action is a reusable unit of code that can be used in workflows. Actions can be created by you or the community.
+
 - **Runner**: A runner is a server that runs your workflows when triggered. GitHub provides hosted runners, or you can host your own.
+
 - **Event**: An event is a specific activity that triggers a workflow. Examples include pushing code, creating a pull request, or scheduling a job.
+
 - **Trigger**: A trigger is an event that starts a workflow. You can define triggers in your workflow file.
+
 - **Environment**: An environment is a set of resources that your workflow can access. You can define environments for different stages of your deployment process.
+
 - **Secret**: A secret is a sensitive piece of information, such as an API key or password, that you can store in your repository settings and use in your workflows without exposing it in your code.
 
 2. **Chaining Jobs Together in a Workflow**
@@ -45,7 +53,9 @@ GitHub Actions is a powerful automation tool that allows you to create workflows
 3. **The GitHub Context Object and Variables**
 
 - Every time you execute a workflow, GitHub provides a context object that contains information about the workflow run and the environment in which it is running.
+
 - The GitHub context object provides information about the workflow run, including the event that triggered it, the repository, and the actor who triggered it.
+
 - You can access context variables using `${{ github.<context_variable> }}` syntax.
 - Example:
 
@@ -59,6 +69,7 @@ GitHub Actions is a powerful automation tool that allows you to create workflows
   ```
 
 - You can use this information in your workflow if you need to make decisions based on the context of the workflow run.
+
 - You can also define your own variables using the `env` keyword. These variables can be accessed in your steps using `${{ env.<variable_name> }}` syntax.
 
   - Example:
@@ -75,6 +86,7 @@ GitHub Actions is a powerful automation tool that allows you to create workflows
     ```
 
 - You can define environment variables at the job level, step level, or workflow level. The scope of the variable depends on where you define it.
+
 - You can also output variables from one job to another using the `outputs` keyword. This allows you to pass data between jobs in a workflow.
 
   - Example:
