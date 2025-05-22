@@ -38,7 +38,7 @@ jobs:
       - name: 'Step 2'
         id: step2
         # run: echo "::set-output name=step2value::world"
-        run: echo "step1value=world" >> $GITHUB_OUTPUT
+        run: echo "step2value=world" >> $GITHUB_OUTPUT
 
   job3:
     runs-on: ubuntu-latest
