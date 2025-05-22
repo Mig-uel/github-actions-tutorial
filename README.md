@@ -133,6 +133,28 @@ GitHub Actions is a powerful automation tool that allows you to create workflows
 
 - [GitHub Actions Marketplace](https://github.com/marketplace?type=actions)
 
+## 5. Run a Workflow Against a Pull Request
+
+- You can configure your workflow to run against pull requests by using the `pull_request` event as a trigger. This allows you to run tests and checks on code changes before they are merged into the main branch.
+
+  - Example:
+
+    ```yaml
+    on:
+      pull_request:
+        branches:
+          - main
+
+    jobs:
+      build:
+        runs-on: ubuntu-latest
+        steps:
+          - name: Checkout code
+            uses: actions/checkout@v2
+          - name: Run tests
+            run: echo "Running tests..."
+    ```
+
 ## Credits
 
 [Introduction to GitHub Actions](https://youtube.com/playlist?list=PLiO7XHcmTsleVSRaY7doSfZryYWMkMOxB&si=wqMOf9krw8grDRjt) by [Mickey Gousset](https://www.youtube.com/@MickeyGousset) on YouTube.
