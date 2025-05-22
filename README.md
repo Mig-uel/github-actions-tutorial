@@ -108,6 +108,31 @@ GitHub Actions is a powerful automation tool that allows you to create workflows
             run: echo "Output: ${{ needs.build.outputs.my_output }}"
     ```
 
+## 4. The GitHub Actions Marketplace
+
+- The GitHub Actions Marketplace is a collection of pre-built actions that you can use in your workflows. You can find actions for various tasks, such as deploying to cloud providers, sending notifications, and more.
+
+- You can search for actions in the marketplace and add them to your workflow by specifying the action's repository and version.
+
+  - Example:
+
+    ```yaml
+    jobs:
+      build:
+        runs-on: ubuntu-latest
+        steps:
+          - name: Checkout code
+            uses: actions/checkout@v2
+          - name: Use an action from the marketplace
+            uses: actions/setup-node@v2
+            with:
+              node-version: '14'
+    ```
+
+- You can also create your own actions and publish them to the marketplace for others to use. Actions can be written in JavaScript, Docker, or as a composite action.
+
+- [GitHub Actions Marketplace](https://github.com/marketplace?type=actions)
+
 ## Credits
 
 [Introduction to GitHub Actions](https://youtube.com/playlist?list=PLiO7XHcmTsleVSRaY7doSfZryYWMkMOxB&si=wqMOf9krw8grDRjt) by [Mickey Gousset](https://www.youtube.com/@MickeyGousset) on YouTube.
